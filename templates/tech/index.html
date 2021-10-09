@@ -1,0 +1,221 @@
+{% extends "base.html" %}
+{% load static %}
+{% load mptt_tags %}
+    
+{% block content %}
+    <!--slider area start-->
+    <section class="slider_section mb-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-12">
+                    <div class="categories_menu">
+                        <div class="categories_title">
+                            <h2 class="categori_toggle">Browse categories</h2>
+                        </div>
+                        <div class="categories_menu_toggle">
+                            <ul>
+                                {% comment %} {% for cat in context.category %}
+                                    {% if cat.level == 0 %}
+                                    <li class="menu_item_children"><a href="{% url 'category_detail' cat.slug %}">{{ cat.name }}<i class="fa fa-angle-right"></i></a>
+                                            <ul class="categories_mega_menu">
+                                                <li class="menu_item_children"><a href="{% url 'category_detail' cat.slug %}">{{ c.name }}</a>
+                                                    <div class="categorie_sub_menu">
+                                                        <ul>
+                                                            <li class=""><a href="{% url 'category_detail' cat.slug %}"></a>{{ cat.name }}</li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            
+                                    </li>
+                                    {% endif %}
+                                {% endfor %} {% endcomment %}
+
+
+                                
+                                {% comment %} {% for cat,structure in context.category|tree_info %}
+                                    {% if cat.level == 0 %}
+                                    <li class="menu_item_children categorie_list"><a href="{% url 'category_detail' cat.slug %}">{{ cat.name }}<i class="fa fa-angle-right"></i></a>
+                                        {% if structure.new_level %}
+                                        <ul class="categories_mega_menu">
+                                            <li class="menu_item_children"><a href="{% url 'category_detail' cat.slug %}">{{ cat.name }}</a>
+                                                <div class="categorie_sub_menu">
+                                                    {% if structure.new_level %}
+                                                    <ul class="children">
+                                                        <li class=""><a href="{% url 'category_detail' cat.slug %}">{{ cat.name }}</a></li>
+                                                    {% endif %}
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        {% endif %}
+                                    </li>
+                                    {% endif %}
+                                {% endfor %} {% endcomment %}
+
+                                <!-- Best working logic for categorys whitout mobile version-->
+
+                                {% for cat in context.category %}
+                                {% if cat.level == 0 %}
+                                    <li class="menu_item_children categorie_list"><a href="{% url 'category_detail' cat.slug %}">{{ cat.name }}<i class="fa fa-angle-right"></i></a>
+                                        {% if cat.children %}
+                                        <ul class="categories_mega_menu">
+                                        
+                                            {% for c in cat.children.get_queryset %}
+                                            <li class="menu_item_children"><a href="{% url 'category_detail' c.slug %}">{{ c.name }}</a>
+                                                    <ul class="categorie_sub_menu">
+                                                        {% if c.children %}
+                                                        {% for x in c.children.get_queryset %}
+                                                        <li><a href="{% url 'category_detail' x.slug %}">{{ x.name }}</a></li>
+                                                        {% endfor %}
+                                                        {% endif %}
+                                                    </ul>
+                                            </li>
+                                            {% endfor %}
+                                        
+                                        </ul>
+                                        {% endif %}
+                                    </li>
+                                {% endif %}
+                                {% endfor %}                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-12">
+                    <div class="slider_area owl-carousel">
+                        <div class="single_slider d-flex align-items-center" data-bgimg="{% static '/img/slider/baner.jpeg' %}">
+                            <div class="slider_content">
+                                <h2>Top Quality</h2>
+                                <h1>Aftermarket Turbocharger Specialist</h1>
+                                <a class="button" href="shop.html">shopping now</a>
+                            </div>
+
+                        </div>
+                        <div class="single_slider d-flex align-items-center" data-bgimg="{% static '/img/slider/slider2.jpg' %}">
+                            <div class="slider_content">
+                                <h2>Height - Quality</h2>
+                                <h1>The Parts Of shock Absorbers & Brake Kit</h1>
+                                <a class="button" href="shop.html">shopping now</a>
+                            </div>
+                        </div>
+                        <div class="single_slider d-flex align-items-center" data-bgimg="{% static '/img/slider/slider3.jpg' %}">
+                            <div class="slider_content">
+                                <h2>Engine Oils</h2>
+                                <h1>Top Quality Oil For Every Vehicle</h1>
+                                <a class="button" href="shop.html">shopping now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!--slider area end-->
+
+    <!--shipping area start-->
+    <section class="shipping_area mb-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="shipping_inner">
+                        <div class="single_shipping">
+                            <div class="shipping_icone">
+                                <img src="{% static '/img/about/shipping1.png' %}" alt="">
+                            </div>
+                            <div class="shipping_content">
+                                <h2>Безплатна консултация</h2>
+                                <p>Free shipping on all US order</p>
+                            </div>
+                        </div>
+                        <div class="single_shipping">
+                            <div class="shipping_icone">
+                                <img src="{% static '/img/about/shipping2.png' %}" alt="">
+                            </div>
+                            <div class="shipping_content">
+                                <h2>Най-добра оферта.</h2>
+                                <p>Contact us 24 hours a day</p>
+                            </div>
+                        </div>
+                        <div class="single_shipping">
+                            <div class="shipping_icone">
+                                <img src="{% static '/img/about/shipping3.png' %}" alt="">
+                            </div>
+                            <div class="shipping_content">
+                                <h2>Безплатна доставка.</h2>
+                                <p>You have 30 days to Return</p>
+                            </div>
+                        </div>
+                        <div class="single_shipping">
+                            <div class="shipping_icone">
+                                <img src="{% static '/img/about/shipping4.png' %}" alt="">
+                            </div>
+                            <div class="shipping_content">
+                                <h2>100% Качество на услуги</h2>
+                                <p>You have 30 days to Return</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--shipping area end-->
+    
+    
+
+    <!--featured categories area start-->
+    <section class="featured_categories mb-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section_title">
+                        <h2><span> <strong>Топ</strong>Продукти</span></h2>
+                    </div>
+                    <div class="featured_container">
+                        <div class="row shop_wrapper">
+                                {% for product in context.products %}
+                                {% if product.top == True %}
+                                    <div class="col-lg-3 col-md-4 col-12 ">
+                                        <div class="single_product">
+                                            <div class="product_name grid_name">
+                                                <h3><a href="{% url 'product-details' product.slug %}">{{ product.name }}</a></h3>
+                                            </div>
+                                            <div class="product_thumb">
+                                                <a class="primary_img" href="{% url 'product-details' product.slug %}"><img src="{{ product.images.url }}" alt=""></a>
+                                                {% if product.new %}
+                                                <div class="label_product">
+                                                    <span class="label_sale">Нов</span>
+                                                </div>
+                                                {% endif %}
+                                            </div>
+                                        
+                                    
+                                            <div class="product_content list_content">
+                                                <div class="right_caption">
+                                                    <div class="product_name">
+                                                        <h3><a href="{% url 'product-details' product.slug %}">{{ product.name }}</a></h3>
+                                                    </div>
+                                                    
+                                                    <div class="product_desc">
+                                                        <p>{{ product.description|safe }}</p>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--featured categories area end-->
+{% endblock content %}
+

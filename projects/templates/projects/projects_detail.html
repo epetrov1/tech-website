@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block headers %}
+<title>{{ object.title | safe }}</title>
+{% endblock headers %}
+
+{% block content %}
+    <div class="container" style="align:center">
+        <div class="row align-items-center">
+            <div class="col-lg-12 col-sm-12 col-md-12">
+                <h1 >{{ object.title | safe }}</h1>
+                <p style="color: white" id="summernote">{{ object.content | safe }}</p>
+                <br>
+            </div>
+        </div>
+    </div>
+    <br>
+{% endblock %}

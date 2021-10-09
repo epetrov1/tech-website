@@ -1,0 +1,85 @@
+{% comment %} 
+<div class="d-flex">
+    <div class="dropdown mr-1">
+        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">
+        Categories
+        </button>
+        <div class="dropdown-menu categories_menu_toggle">
+            <div class="categories_menu_toggle">
+                <ul>
+                    {% for cat in category_globul %}
+                    {% if cat.level == 0 %}
+                        <li class="menu_item_children categorie_list"><a href="{% url 'category_detail' cat.slug %}">{{ cat.name }}<i class="fa fa-angle-right"></i></a>
+                            {% if cat.children %}
+                            <ul class="categories_mega_menu column_2">
+                            
+                                {% for c in cat.children.get_queryset %}
+                                <li class="menu_item_children"><a href="{% url 'category_detail' c.slug %}">{{ c.name }}</a>
+                                        <ul class="categorie_sub_menu">
+                                            {% if c.children %}
+                                            {% for x in c.children.get_queryset %}
+                                            <li class="menu_item_children"><a href="{% url 'category_detail' x.slug %}">{{ x.name }}</a></li>
+                                            {% endfor %}
+                                            {% endif %}
+                                        </ul>
+                                </li>
+                                {% endfor %}
+                            
+                            </ul>
+                            {% endif %}
+                        </li>
+                    {% endif %}
+                    {% endfor %}                                
+                </ul>
+            </div>
+        </div>
+    </div>
+</div> {% endcomment %}
+<div id="menu" class="text-left ">
+    <ul class="offcanvas_main_menu">
+        <li class="menu-item-has-children">
+            <a href="#">Categories</a>
+                <ul class="sub-menu">
+                {% for cat in category_globul %}
+                {% if cat.level == 0 %}
+                    <li class="menu-item-has-children"><a class="dropdown-item" href="{{ cat.slug }}"><b>{{ cat.name }}</b></a>
+                        
+                            {% if cat.children %}
+                            <ul class="sub-menu">
+                            {% for c in cat.children.get_queryset %}
+                            <li class="menu-item-has-children"><a a class="dropdown-item" href="{{ c.slug }}">{{ c.name }}</a>
+                                <ul class="sub-menu">
+                                    {% if c.children %}
+                                    {% for x in c.children.get_queryset %}
+                                        <li class="menu-item-has-children"><a a class="dropdown-item" href="{{ x.slug }}">{{ x.name }}</a>
+                                                <ul class="sub-menu">
+                                                {% if x.children %}
+                                                {% for y in x.children.get_queryset %}
+                                                    <li class="menu-item-has-children"><a a class="dropdown-item" href="{{ y.slug }}">{{ y.name }}</a>
+                                                            <ul class="sub-menu">
+                                                            {% if y.children %}
+                                                            {% for z in y.children.get_queryset %}
+                                                                <li class="menu-item-has-children"><a a class="dropdown-item" href="{{ z.slug }}">{{ z.name }}</a></li>
+                                                            {% endfor %}
+                                                            {% endif %}
+                                                            </ul>
+                                                    </li>
+                                                {% endfor %}
+                                                {% endif %}
+                                                </ul>
+                                        </li>
+                                    {% endfor %}
+                                    {% endif %}
+                                </ul>
+                            </li>
+                            {% endfor %}
+                            </ul>
+                            {% endif %}
+                        
+                    </li>
+                {% endif %}
+                {% endfor %}
+                </ul>
+        </li>
+    </ul>
+</div>

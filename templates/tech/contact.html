@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+    <!--contact map start-->
+    <div class="contact_map mt-30">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="map-area">
+                        <div id="googleMap"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23041.154544941644!2d26.501007356067188!3d43.79061831491056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40afad9b1b3abc55%3A0x6c313e043d789536!2z0L_QsNC30LDRgCDQuCDQv9Cw0L3QsNC40YA!5e0!3m2!1sen!2sbg!4v1630744471407!5m2!1sen!2sbg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--contact map end-->
+
+    <!--contact area start-->
+    <div class="contact_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                    <div class="contact_message content">
+                        <h3>contact us</h3>
+                        <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram anteposuerit litterarum formas human. qui sequitur mutationem consuetudium lectorum. Mirum est notare quam</p>
+                        <ul>
+                            <li><i class="fa fa-fax"></i> Address : No 40 Baria Sreet 133/2 NewYork City</li>
+                            <li><i class="fa fa-phone"></i> <a href="#">Infor@roadthemes.com</a></li>
+                            <li><i class="fa fa-envelope-o"></i><a href="tel:0(1234)567890">0 (1234) 567 890</a> </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="contact_message form">
+                        <h3>Tell us your project</h3>
+                        <form id="contact-form" method="POST" action="assets/mail.php">
+                            <p>
+                                <label> Your Name (required)</label>
+                                <input name="name" placeholder="Name *" type="text">
+                            </p>
+                            <p>
+                                <label> Your Email (required)</label>
+                                <input name="email" placeholder="Email *" type="email">
+                            </p>
+                            <p>
+                                <label> Subject</label>
+                                <input name="subject" placeholder="Subject *" type="text">
+                            </p>
+                            <div class="contact_textarea">
+                                <label> Your Message</label>
+                                <textarea placeholder="Message *" name="message" class="form-control2"></textarea>
+                            </div>
+                            <button type="submit"> Send</button>
+                            <p class="form-messege"></p>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--contact area end-->
+
+
+    
+
+    <!--footer area start-->
+    <footer class="footer_widgets">
+        <div class="container">
+            <div class="footer_top">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="widgets_container contact_us">
+                            <div class="footer_logo">
+                                <a href="#"><img src="assets/img/logo/logo.png" alt=""></a>
+                            </div>
+                            <div class="footer_contact">
+                                <p>We are a team of designers and developers that
+                                    create high quality Magento, Prestashop, Opencart...</p>
+                                <p><span>Address</span> 4710-4890 Breckinridge St, UK Burlington, VT 05401</p>
+                                <p><span>Need Help?</span>Call: <a href="tel:1-800-345-6789">1-800-345-6789</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-6">
+                        <div class="widgets_container widget_menu">
+                            <h3>Information</h3>
+                            <div class="footer_menu">
+                                <ul>
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="#">Delivery Information</a></li>
+                                    <li><a href="privacy-policy.html">privacy policy</a></li>
+                                    <li><a href="coming-soon.html">Coming Soon</a></li>
+                                    <li><a href="#">Terms & Conditions</a></li>
+                                    <li><a href="#">Returns</a></li>
+                                    <li><a href="#">Gift Certificates</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-6">
+                        <div class="widgets_container widget_menu">
+                            <h3>Extras</h3>
+                            <div class="footer_menu">
+                                <ul>
+                                    <li><a href="#">Returns</a></li>
+                                    <li><a href="#">Order History</a></li>
+                                    <li><a href="wishlist.html">Wish List</a></li>
+                                    <li><a href="#">Newsletter</a></li>
+                                    <li><a href="#">Affiliate</a></li>
+                                    <li><a href="#">Specials</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="widgets_container">
+                            <h3>Newsletter Subscribe</h3>
+                            <p>We’ll never share your email address with a third-party.</p>
+                            <div class="subscribe_form">
+                                <form id="mc-form" class="mc-form footer-newsletter">
+                                    <input id="mc-email" type="email" autocomplete="off" placeholder="Enter you email address here..." />
+                                    <button id="mc-submit">Subscribe</button>
+                                </form>
+                                <!-- mailchimp-alerts Start -->
+                                <div class="mailchimp-alerts text-centre">
+                                    <div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
+                                    <div class="mailchimp-success"></div><!-- mailchimp-success end -->
+                                    <div class="mailchimp-error"></div><!-- mailchimp-error end -->
+                                </div><!-- mailchimp-alerts end -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_bottom">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="copyright_area">
+                            <p>Copyright &copy; 2021 <a href="#">Autima</a> All Right Reserved.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="footer_payment text-right">
+                            <a href="#"><img src="assets/img/icon/payment.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--footer area end-->
+
+    <!-- JS
+============================================ -->
+
+
+    <!--map js code here-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdWLY_Y6FL7QGW5vcO3zajUEsrKfQPNzI"></script>
+    <script src="https://www.google.com/jsapi"></script>
+    <script src="assets/js/map.js"></script>
+{% endblock content %}
