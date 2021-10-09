@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     'services',
     'django_summernote',
     'mptt',
+
+    'modeltranslation',
+    'rosetta',
 ]
 
 MIDDLEWARE = [
@@ -109,7 +112,11 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LOCALE_PATHS = [
+    BASE_DIR, 'locale',
+]
+
+LANGUAGE_CODE = 'bg'
 
 TIME_ZONE = 'UTC'
 
@@ -119,7 +126,11 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+gettext = lambda s: s
+LANGUAGES = (
+    ('bg', gettext('Bulgarian')),
+    ('en', gettext('English')),
+)
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
@@ -127,6 +138,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR, "static",
 ]
+
+MODELTRANSLATION_LANGUAGES = ('en', 'bg')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = "media"
@@ -137,3 +150,6 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+ROSETTA_SHOW_AT_ADMIN_PANEL = True

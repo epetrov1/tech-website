@@ -2,7 +2,6 @@ from django.db import models
 from mptt.models import MPTTModel, TreeForeignKey, TreeManyToManyField
 from django.template.defaultfilters import slugify
 from django.urls import reverse
-from . managers import PageManager
 
 #Main Category 
 class Category(MPTTModel):

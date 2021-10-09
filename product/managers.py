@@ -1,4 +1,4 @@
-from django.core.paginator import Paginator
+""" from django.core.paginator import Paginator
 from django.db import models
 
 
@@ -9,4 +9,4 @@ class PageQuerySet(models.QuerySet):
         return paginator.get_page(page_number)
 
 
-PageManager = models.Manager.from_queryset(PageQuerySet)
+PageManager = models.Manager.from_queryset(PageQuerySet) """

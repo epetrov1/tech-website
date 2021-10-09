@@ -12,7 +12,7 @@ admin.site.register(Category, CategoryAdmin)
 class FactoryAdmin(SummernoteModelAdmin):
     list_display = ('name',)
     prepopulated_fields= {'slug':('name',)}
-    summernote_fields = ('description')
+    summernote_fields = ('description', 'description_bg', 'description_en')
 
 admin.site.register(Factory, FactoryAdmin)
 
@@ -23,7 +23,7 @@ class ProductImagesAdmin(admin.StackedInline):
 class ProductAdmin(SummernoteModelAdmin):
     list_display = ('name', 'factory', 'top', 'new')
     prepopulated_fields= {'slug':('name',)}
-    summernote_fields = ('description', 'specification')
+    summernote_fields = ('description', 'specification', 'description_bg', 'description_en', 'specification_bg', 'specification_en')
     inlines = [ProductImagesAdmin]
  
     class Meta:
