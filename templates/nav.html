@@ -1,4 +1,5 @@
  {% load static %}
+ {%  load i18n %}
  {% load mptt_tags %}
  <!--header middel start-->
 <header class="header_area">
@@ -37,7 +38,7 @@
                         <div class="main_menu header_position">
                             <nav >
                                 <ul>
-                                    <li><a href="{% url 'home' %}">home</a>
+                                    <li><a href="{% url 'home' %}">{% trans "Home" %}</a></li>
                                     </li>
                                     <li><a href="{% url 'factorys' %}">Factories</a>
                                     
