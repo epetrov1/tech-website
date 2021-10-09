@@ -1,0 +1,19 @@
+<div class="col-lg-4 col-md-6">
+    <div class="widgets_container">
+        <h3>Newsletter Subscribe</h3>
+        <p>We’ll never share your email address with a third-party.</p>
+        <div class="subscribe_form">{% csrf_token %}
+            <form id="mc-form" method="post" action>
+                {{ form.as_p }}
+                <input type="email" autocomplete="off" placeholder="Enter you email address here..." />
+                <button id="mc-submit" type="submit">Subscribe</button>
+            </form>
+            <!-- mailchimp-alerts Start -->
+            {% comment %} <div class="mailchimp-alerts text-centre">
+                <div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
+                <div class="mailchimp-success"></div><!-- mailchimp-success end -->
+                <div class="mailchimp-error"></div><!-- mailchimp-error end -->
+            </div><!-- mailchimp-alerts end --> {% endcomment %}
+        </div>
+    </div>
+</div>

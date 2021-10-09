@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'product',
     'projects',
     'services',
+    'subscription',
     'django_summernote',
     'mptt',
 ]
