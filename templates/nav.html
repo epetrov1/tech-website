@@ -1,5 +1,5 @@
  {% load static %}
- {%  load i18n %}
+ {% load i18n %}
  {% load mptt_tags %}
  <!--header middel start-->
 <header class="header_area">
@@ -11,19 +11,32 @@
                             <a href="{% url 'home' %}"><img src="{% static 'img/logo/logo.png' %}" alt=""></a>
                         </div>
                     </div>
-                    <div class="col-lg-9 col-md-6 col-sm-6">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="middel_right">
                             <div class="search-container">
-                                <form action="{% url 'search-results' %}" method="get">
+                                <form action="{% url 'search-results' %}" method="get"  accept-charset="UTF-8">
                                     <div class="search_box">
-                                        <input name="q" type="text" placeholder="Търсене в продукти">
+                                        <input name="q" type="text" placeholder="{% trans 'Търсене в продукти' %}">
                                         <button type="submit"><a href="{% url 'search-results' %}"><i class="ion-ios-search-strong"></i></a></button>
                                     </div>
                                 </form>
                             </div>
                         </div>
                     </div>
+                    <div class="col-lg-3" class="language">
+                        <ul class="">
+                            {% get_current_language as LANGUAGE_CODE %}
+                            {% get_available_languages as LANGUAGES %}
+                            {% get_language_info_list for LANGUAGES as languages %}
+                            {% for lang in languages %}
+                            <li style="color:black">
+                                <a class="" href="/{{ lang.code }}/">{{ lang.name_local }}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 </div>
+                
             </div>
         </div>
         <!--header middel end-->
@@ -39,17 +52,17 @@
                             <nav >
                                 <ul>
                                     <li><a href="{% url 'home' %}">{% trans "Home" %}</a></li>
-                                    </li>
-                                    <li><a href="{% url 'factorys' %}">Factories</a>
+                                    <li><a href="{% url 'factorys' %}">{% trans "Factories" %}</a>
                                     
                                     </li>
-                                    <li><a href="{% url 'services' %}">services</a>
+                                    <li><a href="{% url 'services' %}">{% trans "Services" %}</a>
                                         
                                     </li>
                                     
-                                    <li><a href="{% url 'projects' %}">projects</a></li>
-                                    <li><a href="{% url 'contacts' %}">Contact Us</a></li>
+                                    <li><a href="{% url 'projects' %}">{% trans "projects" %}</a></li>
+                                    <li><a href="{% url 'contacts' %}">{% trans "Contact Us" %}</a></li>
                                 </ul>
+                                
                             </nav>
                         </div>
                     </div>
@@ -58,6 +71,7 @@
             </div>
         </div>
         <!--header bottom end-->
+       
 </header>
 <!--Offcanvas menu area start-->
     <div class="off_canvars_overlay"></div>
@@ -77,7 +91,7 @@
                         <div class="search-container">
                             <form action="{% url 'search-results' %}" method="get">
                                 <div class="search_box">
-                                    <input name="q" type="text" placeholder="Търсене в продукти">
+                                    <input name="q" type="text" placeholder="{% trans 'Търсене в продукти' %}">
                                     <button type="submit"><a href="{% url 'search-results' %}"><i class="ion-ios-search-strong"></a></i></button>
                                 </div>
                             </form>
@@ -85,20 +99,20 @@
                         <div id="menu" class="text-left ">
                             <ul class="offcanvas_main_menu">
                                 <li class="menu-item-has-children">
-                                    <a href="{% url 'home' %}">Home</a>
+                                    <a href="{% url 'home' %}">{% trans "Home" %}</a>
                                     
                                 </li>
                                 <li class="menu-item-has-children">
-                                    <a href="{% url 'factorys' %}">Factorys</a>
+                                    <a href="{% url 'factorys' %}">{% trans "Factorys" %}</a>
                                 </li>
                                 <li class="menu-item-has-children">
-                                    <a href="{% url 'services' %}">Services</a> 
+                                    <a href="{% url 'services' %}">{% trans "Services" %}</a> 
                                 </li>
                                 <li class="menu-item-has-children">
-                                    <a href="{% url 'projects' %}">Projects </a> 
+                                    <a href="{% url 'projects' %}">{% trans "Projects" %}</a> 
                                 </li>
                                 <li class="menu-item-has-children">
-                                    <a href="{% url 'contacts' %}">Contact Us</a>
+                                    <a href="{% url 'contacts' %}">{% trans "Contact Us" %}</a>
                                 </li>
                             </ul>
                         </div>

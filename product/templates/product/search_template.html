@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load i18n %}
 
 
 {% block content %}
@@ -35,7 +36,7 @@
                         </div>
                     {% endfor %}
                 {% else %}
-                    <h2>Няма намерени продукти</h2>
+                    <h2>{% trans "Products not fount with search" %}</h2>
                 {% endif %}
 
                 </div>

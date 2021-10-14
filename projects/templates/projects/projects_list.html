@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block headers %}
-<title>Проекти</title>
+<title>{% trans "Projects" %}</title>
 {% endblock headers %}
 
 {% block content %}
@@ -11,7 +12,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="blog_wrapper">
-                        <h1>Проекти</h1>
+                        <h1>{% trans "Projects" %}</h1>
                         {% for obj in object_list %}
                         <div class="single_blog">
                             <div class="blog_thumb">
@@ -21,11 +22,11 @@
                                 <h3><a href="{{ obj.slug }}">{{ obj.title | safe }}</a></h3>
                                 <div class="blog_meta">
                                     <span class="post_date"><i class="fa-calendar fa"></i>{{ obj.date_create | safe }}</span><br>
-                                    <span class="author"><i class="fa fa-user-circle"></i> Публикувано от : Администратор</span>
+                                    <span class="author"><i class="fa fa-user-circle"></i>{% trans "Publish : Admin" %}</span>
                                     
                                 </div>
                                 <div class="readmore_button">
-                                    <a href="{{ obj.slug }}">Прочети</a>
+                                    <a href="{{ obj.slug }}">{% trans "Read" %}</a>
                                 </div>
                             </div>
                         </div>

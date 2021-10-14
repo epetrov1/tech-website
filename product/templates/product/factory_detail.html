@@ -1,6 +1,13 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% load mptt_tags %}
 {% load static %}
+
+{% block headers %}
+
+<title> {{ object.name }}</title>
+{% endblock headers %}
+
 {% block content %}
     <!--product details start-->
     <div class="product_details mt-20">
@@ -26,7 +33,7 @@
                             <div class="product_info_button">
                                 <ul class="nav" role="tablist" id="nav-tab">
                                     <li>
-                                        <a class="active" data-toggle="tab" href="#info" role="tab" aria-controls="info" aria-selected="false">Description</a>
+                                        <a class="active" data-toggle="tab" href="#info" role="tab" aria-controls="info" aria-selected="false">{% trans "Description" %}</a>
                                     </li>
                                     
                                 </ul>
@@ -54,7 +61,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section_title">
-                        <h2><span> <strong>{{object.name }}</strong>Продукти</span></h2>
+                        <h2><span> <strong>{{object.name }}</strong>{% trans "Products" %}</span></h2>
                     </div>
                     <div class="row shop_wrapper">
                     {% for product in object_list %}
@@ -67,7 +74,7 @@
                                     <a class="primary_img" href="{% url 'product-details' product.slug %}"><img src="{{ product.images.url }}" alt=""></a>
                                     {% if product.new %}
                                     <div class="label_product">
-                                        <span class="label_sale">Нов</span>
+                                        <span class="label_sale">{% trans "New" %}</span>
                                     </div>
                                     {% endif %}
                                 </div>

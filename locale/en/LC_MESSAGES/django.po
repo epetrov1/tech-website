@@ -8,15 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-09 21:24+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2021-10-10 12:04+0000\n"
+"PO-Revision-Date: 2021-10-10 12:58+0000\n"
+"Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.9.7\n"
 
 #: env/lib/python3.8/site-packages/django/contrib/messages/apps.py:7
 msgid "Messages"
@@ -77,8 +78,8 @@ msgstr ""
 
 #: env/lib/python3.8/site-packages/django/core/validators.py:266
 msgid ""
-"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
-"hyphens."
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or"
+" hyphens."
 msgstr ""
 
 #: env/lib/python3.8/site-packages/django/core/validators.py:275
@@ -263,15 +264,15 @@ msgstr ""
 #: env/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1288
 #, python-format
 msgid ""
-"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
-"uuuuuu]][TZ] format."
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ] format."
 msgstr ""
 
 #: env/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1292
 #, python-format
 msgid ""
-"“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
-"[TZ]) but it is an invalid date/time."
+"“%(value)s” value has the correct format (YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ]) but it is an invalid date/time."
 msgstr ""
 
 #: env/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1296
@@ -290,8 +291,8 @@ msgstr ""
 #: env/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1585
 #, python-format
 msgid ""
-"“%(value)s” value has an invalid format. It must be in [DD] [[HH:]MM:]ss[."
-"uuuuuu] format."
+"“%(value)s” value has an invalid format. It must be in [DD] "
+"[[HH:]MM:]ss[.uuuuuu] format."
 msgstr ""
 
 #: env/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1588
@@ -450,7 +451,8 @@ msgid "Many-to-many relationship"
 msgstr ""
 
 #. Translators: If found as last label character, these punctuation
-#. characters will prevent the default label_suffix to be appended to the label
+#. characters will prevent the default label_suffix to be appended to the
+#. label
 #: env/lib/python3.8/site-packages/django/forms/boundfield.py:150
 msgid ":?.!"
 msgstr ""
@@ -500,7 +502,8 @@ msgstr ""
 
 #: env/lib/python3.8/site-packages/django/forms/fields.py:542
 #, python-format
-msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid ""
+"Ensure this filename has at most %(max)d character (it has %(length)d)."
 msgid_plural ""
 "Ensure this filename has at most %(max)d characters (it has %(length)d)."
 msgstr[0] ""
@@ -607,7 +610,8 @@ msgid "The inline value did not match the parent instance."
 msgstr ""
 
 #: env/lib/python3.8/site-packages/django/forms/models.py:1193
-msgid "Select a valid choice. That choice is not one of the available choices."
+msgid ""
+"Select a valid choice. That choice is not one of the available choices."
 msgstr ""
 
 #: env/lib/python3.8/site-packages/django/forms/models.py:1311
@@ -1067,11 +1071,11 @@ msgstr ""
 
 #: env/lib/python3.8/site-packages/django/views/csrf.py:124
 msgid ""
-"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
-"including the “Referrer-Policy: no-referrer” header, please remove them. The "
-"CSRF protection requires the “Referer” header to do strict referer checking. "
-"If you’re concerned about privacy, use alternatives like <a rel=\"noreferrer"
-"\" …> for links to third-party sites."
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or"
+" including the “Referrer-Policy: no-referrer” header, please remove them. "
+"The CSRF protection requires the “Referer” header to do strict referer "
+"checking. If you’re concerned about privacy, use alternatives like <a "
+"rel=\"noreferrer\" …> for links to third-party sites."
 msgstr ""
 
 #: env/lib/python3.8/site-packages/django/views/csrf.py:132
@@ -1122,8 +1126,8 @@ msgstr ""
 #: env/lib/python3.8/site-packages/django/views/generic/dates.py:594
 #, python-format
 msgid ""
-"Future %(verbose_name_plural)s not available because %(class_name)s."
-"allow_future is False."
+"Future %(verbose_name_plural)s not available because "
+"%(class_name)s.allow_future is False."
 msgstr ""
 
 #: env/lib/python3.8/site-packages/django/views/generic/dates.py:628
@@ -1179,10 +1183,10 @@ msgstr ""
 #: env/lib/python3.8/site-packages/django/views/templates/default_urlconf.html:222
 #, python-format
 msgid ""
-"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
-"%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
-"\">DEBUG=True</a> is in your settings file and you have not configured any "
-"URLs."
+"You are seeing this page because <a "
+"href=\"https://docs.djangoproject.com/en/%(version)s/ref/settings/#debug\" "
+"target=\"_blank\" rel=\"noopener\">DEBUG=True</a> is in your settings file "
+"and you have not configured any URLs."
 msgstr ""
 
 #: env/lib/python3.8/site-packages/django/views/templates/default_urlconf.html:230
@@ -1237,6 +1241,77 @@ msgstr ""
 msgid "None"
 msgstr ""
 
+#: product/templates/product/category.html:5
+msgid "Categories"
+msgstr ""
+
+#: product/templates/product/factory_detail.html:36
+#: product/templates/product/product-details.html:47
+msgid "Description"
+msgstr ""
+
+#: product/templates/product/factory_detail.html:64
+#: product/templates/product/product-details.html:95
+#: product/templates/product/shop-fullwidth.html:46
+#: templates/tech/index.html:140
+msgid "Products"
+msgstr ""
+
+#: product/templates/product/factory_detail.html:77
+#: product/templates/product/product-details.html:108
+#: product/templates/product/shop-fullwidth.html:59
+#: templates/tech/index.html:155
+msgid "New"
+msgstr ""
+
+#: product/templates/product/factory_list.html:6 templates/footer.html:53
+#: templates/nav.html:42
+msgid "Factories"
+msgstr ""
+
+#: product/templates/product/product-details.html:50
+msgid "Specification"
+msgstr ""
+
+#: product/templates/product/product-details.html:78 templates/footer.html:56
+#: templates/nav.html:50 templates/nav.html:100
+msgid "Contact Us"
+msgstr ""
+
+#: product/templates/product/search_template.html:39
+msgid "Products not fount with search"
+msgstr ""
+
+#: product/templates/product/shop-fullwidth.html:6
+#: product/templates/product/shop-fullwidth.html:20
+msgid "Category"
+msgstr ""
+
+#: product/templates/product/shop-fullwidth.html:33
+msgid "results"
+msgstr ""
+
+#: projects/templates/projects/projects_list.html:4
+#: projects/templates/projects/projects_list.html:15 templates/nav.html:97
+msgid "Projects"
+msgstr ""
+
+#: projects/templates/projects/projects_list.html:25
+#: services/templates/services/services_list.html:26
+msgid "Publish : Admin"
+msgstr ""
+
+#: projects/templates/projects/projects_list.html:29
+#: services/templates/services/services_list.html:30
+msgid "Read"
+msgstr ""
+
+#: services/templates/services/services_list.html:5
+#: services/templates/services/services_list.html:16 templates/footer.html:54
+#: templates/nav.html:45 templates/nav.html:94
+msgid "Services"
+msgstr "Services"
+
 #: tech/settings.py:134
 msgid "Bulgarian"
 msgstr ""
@@ -1245,6 +1320,184 @@ msgstr ""
 msgid "English"
 msgstr ""
 
-#: templates/nav.html:41
+#: templates/footer.html:11
+msgid "Follow us in social networks"
+msgstr ""
+
+#: templates/footer.html:40
+msgid "We are a team of designers and developers."
+msgstr ""
+
+#: templates/footer.html:41
+msgid "Address"
+msgstr ""
+
+#: templates/footer.html:41
+msgid "Your address"
+msgstr ""
+
+#: templates/footer.html:42
+msgid "Need Help?"
+msgstr ""
+
+#: templates/footer.html:42 templates/tech/contact.html:37
+msgid "phonenumber"
+msgstr ""
+
+#: templates/footer.html:49
+msgid "Pages"
+msgstr ""
+
+#: templates/footer.html:52 templates/nav.html:41 templates/nav.html:87
 msgid "Home"
+msgstr ""
+
+#: templates/footer.html:55 templates/nav.html:49
+msgid "projects"
+msgstr ""
+
+#: templates/footer.html:63
+msgid "Newsletter Subscribe"
+msgstr ""
+
+#: templates/footer.html:64
+msgid "We’ll never share your email address with a third-party."
+msgstr ""
+
+#: templates/footer.html:67
+msgid "Enter you email address here..."
+msgstr ""
+
+#: templates/footer.html:68
+msgid "Subscribe"
+msgstr ""
+
+#: templates/nav.html:19 templates/nav.html:79
+msgid "Търсене в продукти"
+msgstr ""
+
+#: templates/nav.html:91
+msgid "Factorys"
+msgstr ""
+
+#: templates/tech/contact.html:6 templates/tech/contact.html:32
+msgid "contact us"
+msgstr ""
+
+#: templates/tech/contact.html:33
+msgid "Claritas est etiam processus dynamicus"
+msgstr ""
+
+#: templates/tech/contact.html:35
+msgid "Address : No 40 Baria Sreet 133/2 NewYork City"
+msgstr ""
+
+#: templates/tech/contact.html:36
+msgid "Infor@roadthemes.com"
+msgstr ""
+
+#: templates/tech/contact.html:43
+msgid "Tell us your project"
+msgstr ""
+
+#: templates/tech/contact.html:46
+msgid "Your Name (required)"
+msgstr ""
+
+#: templates/tech/contact.html:47
+msgid "Name *"
+msgstr ""
+
+#: templates/tech/contact.html:50
+msgid "Your Email (required)"
+msgstr ""
+
+#: templates/tech/contact.html:51
+msgid "Email*"
+msgstr ""
+
+#: templates/tech/contact.html:54
+msgid "Subject"
+msgstr ""
+
+#: templates/tech/contact.html:55
+msgid "Subject *"
+msgstr ""
+
+#: templates/tech/contact.html:58
+msgid "Your Message"
+msgstr ""
+
+#: templates/tech/contact.html:59
+msgid "Message *"
+msgstr ""
+
+#: templates/tech/contact.html:61
+msgid "Send"
+msgstr ""
+
+#: templates/tech/index.html:7
+msgid "home-title"
+msgstr ""
+
+#: templates/tech/index.html:18
+msgid "Browse categories"
+msgstr ""
+
+#: templates/tech/index.html:54
+msgid "Top Quality"
+msgstr ""
+
+#: templates/tech/index.html:55
+msgid "Aftermarket Turbocharger Specialist"
+msgstr ""
+
+#: templates/tech/index.html:56 templates/tech/index.html:64
+#: templates/tech/index.html:71
+msgid "shopping now"
+msgstr ""
+
+#: templates/tech/index.html:62
+msgid "Height - Quality"
+msgstr ""
+
+#: templates/tech/index.html:63
+msgid "The Parts Of shock Absorbers & Brake Kit"
+msgstr ""
+
+#: templates/tech/index.html:94
+msgid "Free consulting"
+msgstr ""
+
+#: templates/tech/index.html:95
+msgid "Free shipping on all US order"
+msgstr ""
+
+#: templates/tech/index.html:103
+msgid "Best offer"
+msgstr ""
+
+#: templates/tech/index.html:104
+msgid "Contact us 24 hours a day"
+msgstr ""
+
+#: templates/tech/index.html:112
+msgid "Free shipping"
+msgstr ""
+
+#: templates/tech/index.html:113
+msgid "You have 30 days to Return"
+msgstr ""
+
+#: templates/tech/index.html:121
+#, python-format
+msgid "100%% quality"
+msgstr ""
+
+#: templates/tech/index.html:122
+msgid "You have 10 days to Return"
+msgstr ""
+
+#: templates/tech/index.html:140
+msgid "Top"
 msgstr ""

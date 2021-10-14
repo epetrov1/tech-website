@@ -3,6 +3,7 @@ from . models import Product, ProductImages, Category, Factory
 from django.views.generic import ListView, DetailView
 from django.views.generic.list import MultipleObjectMixin
 from django.db.models import Q, query
+from django.utils.translation import gettext as _
 
 #Globul function for Categories tree. Use it in "product/shop-fullwidth.html"
 def categorys(request):
@@ -98,6 +99,6 @@ class SearchResultsView(ListView):
     def get_queryset(self):
         query = self.request.GET.get('q')
         object_list = Product.objects.filter(
-            Q(name__icontains=query) | Q(description__icontains=query) | Q(specification__icontains=query)
+            Q(name_en__icontains=query) | Q(name_bg__icontains=query) | Q(name__icontains=query) | Q(description_en__icontains=query) | Q(description_bg__icontains=query) | Q(description__icontains=query) | Q(specification_en__icontains=query) | Q(specification_bg__icontains=query) | Q(specification__icontains=query)
         )
         return object_list

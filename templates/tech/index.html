@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 {% load mptt_tags %}
+
+{% block headers %}
+<title>{% trans "home-title" %}</title>
+{% endblock headers %}
     
 {% block content %}
     <!--slider area start-->
@@ -10,51 +15,11 @@
                 <div class="col-lg-3 col-md-12">
                     <div class="categories_menu">
                         <div class="categories_title">
-                            <h2 class="categori_toggle">Browse categories</h2>
+                            <h2 class="categori_toggle">{% trans "Browse categories" %}</h2>
                         </div>
                         <div class="categories_menu_toggle">
                             <ul>
-                                {% comment %} {% for cat in context.category %}
-                                    {% if cat.level == 0 %}
-                                    <li class="menu_item_children"><a href="{% url 'category_detail' cat.slug %}">{{ cat.name }}<i class="fa fa-angle-right"></i></a>
-                                            <ul class="categories_mega_menu">
-                                                <li class="menu_item_children"><a href="{% url 'category_detail' cat.slug %}">{{ c.name }}</a>
-                                                    <div class="categorie_sub_menu">
-                                                        <ul>
-                                                            <li class=""><a href="{% url 'category_detail' cat.slug %}"></a>{{ cat.name }}</li>
-                                                        </ul>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                            
-                                    </li>
-                                    {% endif %}
-                                {% endfor %} {% endcomment %}
-
-
-                                
-                                {% comment %} {% for cat,structure in context.category|tree_info %}
-                                    {% if cat.level == 0 %}
-                                    <li class="menu_item_children categorie_list"><a href="{% url 'category_detail' cat.slug %}">{{ cat.name }}<i class="fa fa-angle-right"></i></a>
-                                        {% if structure.new_level %}
-                                        <ul class="categories_mega_menu">
-                                            <li class="menu_item_children"><a href="{% url 'category_detail' cat.slug %}">{{ cat.name }}</a>
-                                                <div class="categorie_sub_menu">
-                                                    {% if structure.new_level %}
-                                                    <ul class="children">
-                                                        <li class=""><a href="{% url 'category_detail' cat.slug %}">{{ cat.name }}</a></li>
-                                                    {% endif %}
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                        {% endif %}
-                                    </li>
-                                    {% endif %}
-                                {% endfor %} {% endcomment %}
-
                                 <!-- Best working logic for categorys whitout mobile version-->
-
                                 {% for cat in context.category %}
                                 {% if cat.level == 0 %}
                                     <li class="menu_item_children categorie_list"><a href="{% url 'category_detail' cat.slug %}">{{ cat.name }}<i class="fa fa-angle-right"></i></a>
@@ -86,24 +51,24 @@
                     <div class="slider_area owl-carousel">
                         <div class="single_slider d-flex align-items-center" data-bgimg="{% static '/img/slider/baner.jpeg' %}">
                             <div class="slider_content">
-                                <h2>Top Quality</h2>
-                                <h1>Aftermarket Turbocharger Specialist</h1>
-                                <a class="button" href="shop.html">shopping now</a>
+                                <h2>{% trans "Top Quality" %}</h2>
+                                <h1>{% trans "Aftermarket Turbocharger Specialist" %}</h1>
+                                <a class="button" href="shop.html">{% trans "shopping now" %}</a>
                             </div>
 
                         </div>
                         <div class="single_slider d-flex align-items-center" data-bgimg="{% static '/img/slider/slider2.jpg' %}">
                             <div class="slider_content">
-                                <h2>Height - Quality</h2>
-                                <h1>The Parts Of shock Absorbers & Brake Kit</h1>
-                                <a class="button" href="shop.html">shopping now</a>
+                                <h2>{% trans "Height - Quality" %}</h2>
+                                <h1>{% trans "The Parts Of shock Absorbers & Brake Kit" %}</h1>
+                                <a class="button" href="shop.html">{% trans "shopping now" %}</a>
                             </div>
                         </div>
                         <div class="single_slider d-flex align-items-center" data-bgimg="{% static '/img/slider/slider3.jpg' %}">
                             <div class="slider_content">
                                 <h2>Engine Oils</h2>
                                 <h1>Top Quality Oil For Every Vehicle</h1>
-                                <a class="button" href="shop.html">shopping now</a>
+                                <a class="button" href="shop.html">{% trans "shopping now" %}</a>
                             </div>
                         </div>
                     </div>
@@ -126,8 +91,8 @@
                                 <img src="{% static '/img/about/shipping1.png' %}" alt="">
                             </div>
                             <div class="shipping_content">
-                                <h2>Безплатна консултация</h2>
-                                <p>Free shipping on all US order</p>
+                                <h2>{% trans "Free consulting" %}</h2>
+                                <p>{% trans "Free shipping on all US order" %}</p>
                             </div>
                         </div>
                         <div class="single_shipping">
@@ -135,8 +100,8 @@
                                 <img src="{% static '/img/about/shipping2.png' %}" alt="">
                             </div>
                             <div class="shipping_content">
-                                <h2>Най-добра оферта.</h2>
-                                <p>Contact us 24 hours a day</p>
+                                <h2>{% trans "Best offer" %}</h2>
+                                <p>{% trans "Contact us 24 hours a day" %}</p>
                             </div>
                         </div>
                         <div class="single_shipping">
@@ -144,8 +109,8 @@
                                 <img src="{% static '/img/about/shipping3.png' %}" alt="">
                             </div>
                             <div class="shipping_content">
-                                <h2>Безплатна доставка.</h2>
-                                <p>You have 30 days to Return</p>
+                                <h2>{% trans "Free shipping" %}</h2>
+                                <p>{% trans "You have 30 days to Return" %}</p>
                             </div>
                         </div>
                         <div class="single_shipping">
@@ -153,8 +118,8 @@
                                 <img src="{% static '/img/about/shipping4.png' %}" alt="">
                             </div>
                             <div class="shipping_content">
-                                <h2>100% Качество на услуги</h2>
-                                <p>You have 30 days to Return</p>
+                                <h2>{% trans "100% quality" %}</h2>
+                                <p>{% trans "You have 10 days to Return" %}</p>
                             </div>
                         </div>
                     </div>
@@ -172,7 +137,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section_title">
-                        <h2><span> <strong>Топ</strong>Продукти</span></h2>
+                        <h2><span><strong>{% trans "Top" %}</strong>{% trans "Products" %}</span></h2>
                     </div>
                     <div class="featured_container">
                         <div class="row shop_wrapper">
@@ -187,7 +152,7 @@
                                                 <a class="primary_img" href="{% url 'product-details' product.slug %}"><img src="{{ product.images.url }}" alt=""></a>
                                                 {% if product.new %}
                                                 <div class="label_product">
-                                                    <span class="label_sale">Нов</span>
+                                                    <span class="label_sale">{% trans "New" %}</span>
                                                 </div>
                                                 {% endif %}
                                             </div>

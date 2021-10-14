@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 {% load mptt_tags %}
+{% load i18n %}
 {% load static %}
+{% block headers %}
+<title>{% trans "Category" %}</title>
+{% endblock headers %}
+
+
 {% block content %}
   
     <!--shop  area start-->
@@ -11,7 +17,7 @@
                     <!--shop wrapper start-->
                     <!--shop toolbar start-->
                     <div class="shop_title">
-                        <h1>categories</h1>
+                        <h1>{% trans "Category" %}</h1>
                     </div>
                     <div class="shop_toolbar_wrapper">
                         <div class="shop_toolbar_btn">
@@ -24,27 +30,9 @@
                         </div>
                             {% include 'product/category.html' %}
                         <div class="page_amount">
-                            <p>1–12 of {{ object_list.count }} results</p>
+                            <p>1–12 : {{ object_list.count }} {% trans "results" %}</p>
                         </div>
-                        {% comment %} <div class="niceselect_option">
-                            
-                            <form class="select_option" action="">
-                                <select name="orderby" id="short">
-                                    {% recursetree object_list %}
-                                        <li><option><a href="{{ node.slug }}">{{ node.name }}</a></option>
-                                            {% if not node.is_leaf_node %}
-                                                <ul class="children">
-                                                    <li>-{{ children }}</li>
-                                                </ul>
-                                            {% endif %}
-                                        </li>
-                                    {% endrecursetree %}
-                                </select>
-                            </form>
-                        </div>
-                        <div class="page_amount">
-                            <p>Showing 1–12 of {{ context.products.count }}</p>
-                        </div> {% endcomment %}
+                        
                     </div>
                     
                     <!--shop toolbar end-->
@@ -55,7 +43,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="section_title">
-                                        <h2><span> <strong>{{object.name }}</strong>Продукти</span></h2>
+                                        <h2><span> <strong>{{object.name }}</strong>{% trans "Products"%}</span></h2>
                                     </div>
                                     <div class="row shop_wrapper">
                                     {% for product in object_list %}
@@ -68,7 +56,7 @@
                                                     <a class="primary_img" href="{% url 'product-details' product.slug %}"><img src="{{ product.images.url }}" alt=""></a>
                                                     {% if product.new %}
                                                     <div class="label_product">
-                                                        <span class="label_sale">Нов</span>
+                                                        <span class="label_sale">{% trans "New" %}</span>
                                                     </div>
                                                     {% endif %}
                                                 </div>
