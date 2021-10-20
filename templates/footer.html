@@ -54,11 +54,12 @@
                                     <li><a href="{% url 'services' %}">{% trans "Services" %}</a></li>
                                     <li><a href="{% url 'projects' %}">{% trans "projects" %}</a></li>
                                     <li><a href="{% url 'contacts' %}">{% trans "Contact Us" %}</a></li>
+                                    
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    {% include 'subscription/subscription_form.html' %}
+                    {% comment %} {% include 'subscription/subscription_form.html' %} {% endcomment %}
                     {% comment %} <div class="col-lg-4 col-md-6">
                         <div class="widgets_container">
                             <h3>{% trans "Newsletter Subscribe" %}</h3>
