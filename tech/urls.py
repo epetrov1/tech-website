@@ -20,17 +20,35 @@ from django.conf.urls.i18n import i18n_patterns
 from django.conf import settings
 from django.conf.urls.static import static
 from product import views
+from product.sitemaps import ProductSitemap, CategorySitemap, FactorySitemap
+from projects.sitemaps import ProjectsSitemap
+from services.sitemaps import ServicesSitemap, StaticSitemap
+from django.contrib.sitemaps.views import sitemap
+from django.views.generic.base import TemplateView
 
+def trigger_error(request):
+    division_by_zero = 1 / 0
 
+sitemaps = {
+    'product': ProductSitemap,
+    'category': CategorySitemap,
+    'factory': FactorySitemap,
+    'projects': ProjectsSitemap,
+    'services': ServicesSitemap,
+    'static': StaticSitemap,
+}
 
 urlpatterns = [
     path("", views.home, name="home"),
     path("contacts/", views.contacts, name="contacts"),
-    path('admin/', admin.site.urls),
+    path('bugs-best-techsite/', admin.site.urls),
     path("products/", include('product.urls')),
     path("services/", include('services.urls')),
     path("projects/", include('projects.urls')),
     path('summernote/', include('django_summernote.urls')),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
+        name='django.contrib.sitemaps.views.sitemap'),
+        path("robots.txt",TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
 
 ]
 

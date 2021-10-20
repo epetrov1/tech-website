@@ -44,7 +44,7 @@ class Factory(models.Model):
         return super().save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse('factory_detail', kwargs={'slug': self.slug})
+        return reverse('factory-detail', kwargs={'slug': self.slug})
 
 
 
@@ -75,7 +75,7 @@ class Product(models.Model):
 
 
     def get_absolute_url(self):
-        return reverse('products_detail', kwargs={'slug': self.slug})
+        return reverse('product-details', kwargs={'slug': self.slug})
 
 
 class ProductImages(models.Model):

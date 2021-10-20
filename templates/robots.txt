@@ -1,0 +1,5 @@
+User-Agent: *
+
+
+Disallow: /bugs-best-techsite//
+Sitemap: http://domain.com/sitemap.xml
