@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -49,7 +50,14 @@ INSTALLED_APPS = [
 
     'modeltranslation',
     'rosetta',
+    'compressor',
+    'easy_thumbnails',
+    'fiber',
+    'rest_framework',
+
 ]
+
+import django.conf.global_settings as DEFAULT_SETTINGS
 
 SITE_ID = 1
 
@@ -62,6 +70,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #fiber
+    'fiber.middleware.ObfuscateEmailAddressMiddleware',
+    'fiber.middleware.AdminPageMiddleware',
 ]
 
 ROOT_URLCONF = 'tech.urls'
@@ -144,9 +155,9 @@ LANGUAGES = (
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    BASE_DIR, "static",
-]
+#STATICFILES_DIRS = [
+#    BASE_DIR, "static",
+#]
 
 MODELTRANSLATION_LANGUAGES = ('bg', 'en')
 
@@ -162,3 +173,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 ROSETTA_SHOW_AT_ADMIN_PANEL = True
+
+#fiber setings
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_FINDERS = DEFAULT_SETTINGS.STATICFILES_FINDERS + [
+    'compressor.finders.CompressorFinder',
+]

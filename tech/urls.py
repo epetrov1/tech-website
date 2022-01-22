@@ -25,6 +25,8 @@ from projects.sitemaps import ProjectsSitemap
 from services.sitemaps import ServicesSitemap, StaticSitemap
 from django.contrib.sitemaps.views import sitemap
 from django.views.generic.base import TemplateView
+from fiber.views import page
+from fiber.sitemaps import FiberSitemap
 
 def trigger_error(request):
     division_by_zero = 1 / 0
@@ -40,25 +42,31 @@ sitemaps = {
 
 urlpatterns = [
     path("", views.home, name="home"),
+    path('api/v2/', include('fiber.rest_api.urls')),
+    path('admin/fiber/', include('fiber.admin_urls')),
     path("contacts/", views.contacts, name="contacts"),
     path('bugs-best-techsite/', admin.site.urls),
     path("products/", include('product.urls')),
     path("services/", include('services.urls')),
     path("projects/", include('projects.urls')),
     path('summernote/', include('django_summernote.urls')),
-    path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
+    path('sitemap.xml', sitemap, {'fiber': FiberSitemap, 'sitemaps': sitemaps},
         name='django.contrib.sitemaps.views.sitemap'),
         path("robots.txt",TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
-
+    re_path('', page),
+    
 ]
 
 urlpatterns += i18n_patterns (
     path("", views.home, name="home"),
+    path('api/v2/', include('fiber.rest_api.urls')),
+    path('admin/fiber/', include('fiber.admin_urls')),
     path("contacts/", views.contacts, name="contacts"),
     path("products/", include('product.urls')),
     path("services/", include('services.urls')),
     path("projects/", include('projects.urls')),
     path('summernote/', include('django_summernote.urls')),
+    re_path('', page),
     
 )
 

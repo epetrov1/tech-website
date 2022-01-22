@@ -1,0 +1,1 @@
+/Users/evgenipetrov/dev/tech/env/lib/python3.8/site-packages/modeltranslation/static/modeltranslation/js/force_jquery.js
