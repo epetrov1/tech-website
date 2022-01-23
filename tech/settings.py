@@ -50,14 +50,11 @@ INSTALLED_APPS = [
 
     'modeltranslation',
     'rosetta',
-    'compressor',
-    'easy_thumbnails',
-    'fiber',
     'rest_framework',
 
 ]
 
-import django.conf.global_settings as DEFAULT_SETTINGS
+
 
 SITE_ID = 1
 
@@ -70,9 +67,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    #fiber
-    'fiber.middleware.ObfuscateEmailAddressMiddleware',
-    'fiber.middleware.AdminPageMiddleware',
+   
 ]
 
 ROOT_URLCONF = 'tech.urls'
@@ -174,10 +169,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ROSETTA_SHOW_AT_ADMIN_PANEL = True
 
-#fiber setings
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_FINDERS = DEFAULT_SETTINGS.STATICFILES_FINDERS + [
-    'compressor.finders.CompressorFinder',
-]
