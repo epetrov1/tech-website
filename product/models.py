@@ -3,9 +3,14 @@ from mptt.models import MPTTModel, TreeForeignKey, TreeManyToManyField
 from django.template.defaultfilters import slugify
 from django.urls import reverse
 
+
+from ordered_model.models import OrderedModel
+
 #Main Category 
 class Category(MPTTModel):
     name = models.CharField(max_length=250)
+    pic = models.ImageField(upload_to='category', blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
     parent = TreeForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='children')
     slug =models.SlugField(null=False, unique=True)
 
@@ -28,12 +33,14 @@ class Category(MPTTModel):
 
 
 
-
+#Factotys model
 class Factory(models.Model):
     name = models.CharField(max_length=250)
     description = models.TextField()
     image = models.ImageField(upload_to='factorys')
     slug =models.SlugField(null=False, unique=True)
+    data_order = models.DateField(blank=True, null=True)
+
 
     def __str__(self):
         return self.name
@@ -50,8 +57,8 @@ class Factory(models.Model):
 
 #Product model
 class Product(models.Model):
-    category = TreeManyToManyField(Category, blank=True)
     name = models.CharField(max_length=250)
+    category = TreeManyToManyField(Category, blank=True)
     images = models.FileField(blank=True)
     slug =models.SlugField(null=False, unique=True)
     description = models.TextField()
@@ -62,8 +69,9 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
     discount = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
     date_created = models.DateField(auto_now_add=True)
+    data_order = models.DateField(blank=True, null=True)
 
-    
+    #order_with_respect_to = ('factory', 'category')
 
     def __str__(self):
         return self.name
@@ -84,7 +92,3 @@ class ProductImages(models.Model):
 
     def __str__(self):
         return self.product.name
-
-
-
-
