@@ -26,6 +26,7 @@ from services.sitemaps import ServicesSitemap, StaticSitemap
 from django.contrib.sitemaps.views import sitemap
 from django.views.generic.base import TemplateView
 
+
 def trigger_error(request):
     division_by_zero = 1 / 0
 
@@ -49,11 +50,12 @@ urlpatterns = [
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
         name='django.contrib.sitemaps.views.sitemap'),
         path("robots.txt",TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
-
+    
 ]
 
 urlpatterns += i18n_patterns (
     path("", views.home, name="home"),
+
     path("contacts/", views.contacts, name="contacts"),
     path("products/", include('product.urls')),
     path("services/", include('services.urls')),

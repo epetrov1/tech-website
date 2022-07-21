@@ -1,0 +1,26 @@
+.cat-one {
+    font-size: 18px;
+}
+
+.cat-two {
+    padding-left: 5px;
+    font-size: 16px;
+    color: blue;
+}
+
+.cat-three {
+    padding-left: 15px;
+    font-size: 14px;
+}
+
+.cat-four {
+    padding-left: 25px;
+    font-size: 12px;
+}
+
+.cat-five {
+    padding-left: 35px;
+    font-size: 10px;
+}
+
+

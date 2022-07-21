@@ -1,0 +1,1 @@
+/Users/evgenipetrov/dev/tech/env/lib/python3.8/site-packages/modeltranslation/static/modeltranslation/js/clearable_inputs.js

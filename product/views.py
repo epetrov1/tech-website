@@ -25,7 +25,7 @@ class ProductsByCategoryView(DetailView, MultipleObjectMixin):
 
     def get_context_data(self, **kwargs):
         id = str(self.kwargs.get('slug'))
-        object_list = Product.objects.prefetch_related('category').filter(category__slug=id)
+        object_list = Product.objects.prefetch_related('category').filter(category__slug=id).order_by('-data_order')
         context = super(ProductsByCategoryView, self).get_context_data(object_list=object_list, **kwargs)
         return context
 
@@ -48,7 +48,7 @@ class FactoryDetailView(DetailView, MultipleObjectMixin):
 #All factorys
 class FactoryListView(ListView):
     model = Factory
-    ordering = ['-name']
+    #ordering = ['-name']
     template_name = "product/factory_list.html"
     paginate_by = 12
 

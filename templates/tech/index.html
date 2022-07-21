@@ -37,10 +37,11 @@
                                                     </ul>
                                             </li>
                                             {% endfor %}
-                                        
-                                        </ul>
                                         {% endif %}
+                                        </ul>
                                     </li>
+                                {% comment %} {% else %}
+                                    <li class="menu_item_children"><a href="{% url 'category_detail' cat.slug %}">{{ cat.name }}<i class="fa fa-angle-right"></i></a></li> {% endcomment %}
                                 {% endif %}
                                 {% endfor %}                                
                             </ul>

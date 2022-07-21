@@ -11,7 +11,11 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+<<<<<<< HEAD
 import environ
+=======
+import os
+>>>>>>> i18n
 
 env = environ.Env(
     # set casting, default value
@@ -56,10 +60,16 @@ INSTALLED_APPS = [
     
     'django_summernote',
     'mptt',
+    'ordered_model',
+
 
     'modeltranslation',
     'rosetta',
+    
+
 ]
+
+
 
 SITE_ID = 1
 
@@ -72,6 +82,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+   
 ]
 
 ROOT_URLCONF = 'tech.urls'
@@ -166,6 +177,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR, "static",
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, "static_root")
 
 MODELTRANSLATION_LANGUAGES = ('bg', 'en')
 
@@ -181,3 +193,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 ROSETTA_SHOW_AT_ADMIN_PANEL = True
+
